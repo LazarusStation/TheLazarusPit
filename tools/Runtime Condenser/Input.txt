@@ -1,0 +1,798 @@
+Logging in...connected
+Logged in as WK_Savage.
+Sun Aug 28 10:17:27 2016
+World opened on network port 11111.
+Welcome BYOND! (5.0 Beta Version 511.1354)
+Running revision:
+Preformace_Update
+
+36432c205d3d8213e7e7abbc4062efba867af2a6
+
+Your server failed to establish a connection with the feedback database.
+
+Your server failed to establish a connection with the SQL database.
+Setting up master controller
+
+BYOND hub reports port 11111 cannot be reached by players.
+
+A firewall or router may be interfering with your connection. For information on hosting worlds through a firewall or router, please visit BYOND Help or portforward.com.
+
+Initialized Master Controller in 32.2s.
+Stopped server.
+Sun Aug 28 15:44:16 2016
+World opened on network port 11111.
+Running revision:
+Preformace_Update
+
+997888a693104e215144f89f104db48d3cd7909b
+Setting up world...
+
+Your server failed to establish a connection with the feedback database.
+
+Your server failed to establish a connection with the SQL database.
+Initialized world in 3s.
+Setting up master controller
+[08:00:00] Runtime in radio.dm,58: Cannot execute null.remove object().
+proc name: set frequency (/obj/item/device/radio/proc/set_frequency)
+src: the station intercom (General) (/obj/item/device/radio/intercom)
+src.loc: null
+call stack:
+the station intercom (General) (/obj/item/device/radio/intercom): set frequency(1459)
+the station intercom (General) (/obj/item/device/radio/intercom): initialize()
+/datum/controller/game_control... (/datum/controller/game_controller): setup objects()
+/datum/controller/game_control... (/datum/controller/game_controller): setup()
+world: New()
+[08:00:00] Runtime in alarm.dm,376: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/alarm/proc/set_frequency)
+src: Solar Maintenance - Aft Port A... (/obj/machinery/alarm)
+src.loc: the plating (96,60,1) (/turf/simulated/floor/plating)
+call stack:
+Solar Maintenance - Aft Port A... (/obj/machinery/alarm): set frequency(1439)
+Solar Maintenance - Aft Port A... (/obj/machinery/alarm): initialize()
+/datum/controller/game_control... (/datum/controller/game_controller): setup objects()
+/datum/controller/game_control... (/datum/controller/game_controller): setup()
+world: New()
+[08:00:00] Runtime in airlock_control.dm,283: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/access_button/proc/set_frequency)
+src: the exterior access button (/obj/machinery/access_button)
+src.loc: the airless plating (90,61,1) (/turf/simulated/floor/airless)
+call stack:
+the exterior access button (/obj/machinery/access_button): set frequency(1379)
+the exterior access button (/obj/machinery/access_button): initialize()
+/datum/controller/game_control... (/datum/controller/game_controller): setup objects()
+/datum/controller/game_control... (/datum/controller/game_controller): setup()
+world: New()
+[08:00:00] Runtime in airlock_control.dm,128: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/door/airlock/proc/set_frequency)
+src: Engineering External Access (/obj/machinery/door/airlock/external)
+src.loc: the plating (91,61,1) (/turf/simulated/floor/plating)
+call stack:
+Engineering External Access (/obj/machinery/door/airlock/external): set frequency(1379)
+Engineering External Access (/obj/machinery/door/airlock/external): initialize()
+/datum/controller/game_control... (/datum/controller/game_controller): setup objects()
+/datum/controller/game_control... (/datum/controller/game_controller): setup()
+world: New()
+[08:00:00] Runtime in embedded_controller_base.dm,81: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/embedded_controller/radio/proc/set_frequency)
+src: Airlock Controller (/obj/machinery/embedded_controller/radio/airlock/airlock_controller)
+src.loc: the plating (92,61,1) (/turf/simulated/floor/plating)
+call stack:
+Airlock Controller (/obj/machinery/embedded_controller/radio/airlock/airlock_controller): set frequency(1379)
+Airlock Controller (/obj/machinery/embedded_controller/radio/airlock/airlock_controller): initialize()
+Airlock Controller (/obj/machinery/embedded_controller/radio/airlock/airlock_controller): initialize()
+/datum/controller/game_control... (/datum/controller/game_controller): setup objects()
+/datum/controller/game_control... (/datum/controller/game_controller): setup()
+world: New()
+[08:00:00] Runtime in airlock_control.dm,214: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/airlock_sensor/proc/set_frequency)
+src: the airlock sensor (/obj/machinery/airlock_sensor)
+src.loc: the plating (92,61,1) (/turf/simulated/floor/plating)
+call stack:
+the airlock sensor (/obj/machinery/airlock_sensor): set frequency(1379)
+the airlock sensor (/obj/machinery/airlock_sensor): initialize()
+/datum/controller/game_control... (/datum/controller/game_controller): setup objects()
+/datum/controller/game_control... (/datum/controller/game_controller): setup()
+world: New()
+[08:00:00] Runtime in radio.dm,8: Cannot execute null.remove object().
+proc name: register radio (/proc/register_radio)
+src: null
+call stack:
+register radio(Large Air Vent (/obj/machinery/atmospherics/unary/vent_pump/high_volume), 1379, 1379, null)
+Large Air Vent (/obj/machinery/atmospherics/unary/vent_pump/high_volume): initialize()
+/datum/controller/game_control... (/datum/controller/game_controller): setup objects()
+/datum/controller/game_control... (/datum/controller/game_controller): setup()
+world: New()
+[08:00:00] Runtime in airlock_control.dm,128: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/door/airlock/proc/set_frequency)
+src: Engineering External Access (/obj/machinery/door/airlock/external)
+src.loc: the plating (93,61,1) (/turf/simulated/floor/plating)
+call stack:
+Engineering External Access (/obj/machinery/door/airlock/external): set frequency(1379)
+Engineering External Access (/obj/machinery/door/airlock/external): initialize()
+/datum/controller/game_control... (/datum/controller/game_controller): setup objects()
+/datum/controller/game_control... (/datum/controller/game_controller): setup()
+world: New()
+[08:00:00] Runtime in airlock_control.dm,283: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/access_button/proc/set_frequency)
+src: the interior access button (/obj/machinery/access_button)
+src.loc: the plating (94,61,1) (/turf/simulated/floor/plating)
+call stack:
+the interior access button (/obj/machinery/access_button): set frequency(1379)
+the interior access button (/obj/machinery/access_button): initialize()
+/datum/controller/game_control... (/datum/controller/game_controller): setup objects()
+/datum/controller/game_control... (/datum/controller/game_controller): setup()
+world: New()
+[08:00:00] Runtime in alarm.dm,376: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/alarm/proc/set_frequency)
+src: Engine Maintenance Air Alarm (/obj/machinery/alarm)
+src.loc: the plating (104,61,1) (/turf/simulated/floor/plating)
+call stack:
+Engine Maintenance Air Alarm (/obj/machinery/alarm): set frequency(1439)
+Engine Maintenance Air Alarm (/obj/machinery/alarm): initialize()
+/datum/controller/game_control... (/datum/controller/game_controller): setup objects()
+/datum/controller/game_control... (/datum/controller/game_controller): setup()
+world: New()
+[08:00:00] Runtime in radio.dm,58: Cannot execute null.remove object().
+proc name: set frequency (/obj/item/device/radio/proc/set_frequency)
+src: the station bounced radio (/obj/item/device/radio)
+src.loc: Supermatter (/obj/machinery/power/supermatter)
+call stack:
+the station bounced radio (/obj/item/device/radio): set frequency(1459)
+the station bounced radio (/obj/item/device/radio): initialize()
+/datum/controller/game_control... (/datum/controller/game_controller): setup objects()
+/datum/controller/game_control... (/datum/controller/game_controller): setup()
+world: New()
+[08:00:00] Runtime in radio.dm,86: Cannot execute null.add object().
+proc name: initialize (/obj/item/device/radio/initialize)
+src: the station bounced radio (/obj/item/device/radio)
+src.loc: Supermatter (/obj/machinery/power/supermatter)
+call stack:
+the station bounced radio (/obj/item/device/radio): initialize()
+/datum/controller/game_control... (/datum/controller/game_controller): setup objects()
+/datum/controller/game_control... (/datum/controller/game_controller): setup()
+world: New()
+[08:00:00] Runtime in outlet_injector.dm,90: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/atmospherics/unary/outlet_injector/proc/set_frequency)
+src: Coolant Injector (/obj/machinery/atmospherics/unary/outlet_injector)
+src.loc: the reinforced floor (112,62,1) (/turf/simulated/floor/reinforced)
+call stack:
+Coolant Injector (/obj/machinery/atmospherics/unary/outlet_injector): set frequency(1438)
+Coolant Injector (/obj/machinery/atmospherics/unary/outlet_injector): initialize()
+/datum/controller/game_control... (/datum/controller/game_controller): setup objects()
+/datum/controller/game_control... (/datum/controller/game_controller): setup()
+world: New()
+[08:00:00] Runtime in atmo_control.dm,63: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/air_sensor/proc/set_frequency)
+src: Gas Sensor (/obj/machinery/air_sensor)
+src.loc: the reinforced floor (113,62,1) (/turf/simulated/floor/reinforced)
+call stack:
+Gas Sensor (/obj/machinery/air_sensor): set frequency(1438)
+Gas Sensor (/obj/machinery/air_sensor): initialize()
+/datum/controller/game_control... (/datum/controller/game_controller): setup objects()
+/datum/controller/game_control... (/datum/controller/game_controller): setup()
+world: New()
+[08:00:00] Runtime in radio.dm,8: Cannot execute null.remove object().
+proc name: register radio (/proc/register_radio)
+src: null
+call stack:
+register radio(Engine Core Vent (/obj/machinery/atmospherics/unary/vent_pump/engine), 1438, 1438, null)
+Engine Core Vent (/obj/machinery/atmospherics/unary/vent_pump/engine): initialize()
+/datum/controller/game_control... (/datum/controller/game_controller): setup objects()
+/datum/controller/game_control... (/datum/controller/game_controller): setup()
+world: New()
+[08:00:00] Runtime in alarm.dm,376: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/alarm/proc/set_frequency)
+src: the Engine Waste Handling Air ... (/obj/machinery/alarm)
+src.loc: the plating (102,64,1) (/turf/simulated/floor/plating)
+call stack:
+the Engine Waste Handling Air ... (/obj/machinery/alarm): set frequency(1439)
+the Engine Waste Handling Air ... (/obj/machinery/alarm): initialize()
+/datum/controller/game_control... (/datum/controller/game_controller): setup objects()
+/datum/controller/game_control... (/datum/controller/game_controller): setup()
+world: New()
+[08:00:00] Runtime in radio.dm,8: Cannot execute null.remove object().
+proc name: register radio (/proc/register_radio)
+src: null
+call stack:
+register radio(Air Vent (/obj/machinery/atmospherics/unary/vent_pump/on), 1439, 1439, "radio_airalarm_rcvr")
+Air Vent (/obj/machinery/atmospherics/unary/vent_pump/on): initialize()
+/datum/controller/game_control... (/datum/controller/game_controller): setup objects()
+/datum/controller/game_control... (/datum/controller/game_controller): setup()
+world: New()
+[08:00:00] Runtime in radio.dm,58: Cannot execute null.remove object().
+proc name: set frequency (/obj/item/device/radio/proc/set_frequency)
+src: the station intercom (General) (/obj/item/device/radio/intercom)
+src.loc: the plating (111,64,1) (/turf/simulated/floor/plating)
+call stack:
+the station intercom (General) (/obj/item/device/radio/intercom): set frequency(1459)
+the station intercom (General) (/obj/item/device/radio/intercom): initialize()
+/datum/controller/game_control... (/datum/controller/game_controller): setup objects()
+/datum/controller/game_control... (/datum/controller/game_controller): setup()
+world: New()
+[08:00:00] Runtime in vent_scrubber.dm,84: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/atmospherics/unary/vent_scrubber/proc/set_frequency)
+src: Air Scrubber (/obj/machinery/atmospherics/unary/vent_scrubber/on)
+src.loc: the plating (101,68,1) (/turf/simulated/floor/plating)
+call stack:
+Air Scrubber (/obj/machinery/atmospherics/unary/vent_scrubber/on): set frequency(1439)
+Air Scrubber (/obj/machinery/atmospherics/unary/vent_scrubber/on): initialize()
+/datum/controller/game_control... (/datum/controller/game_controller): setup objects()
+/datum/controller/game_control... (/datum/controller/game_controller): setup()
+world: New()
+[08:00:00] Runtime in alarm.dm,376: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/alarm/proc/set_frequency)
+[08:00:00] Runtime in radio.dm,8: Cannot execute null.remove object().
+proc name: register radio (/proc/register_radio)
+[08:00:00] Runtime in vent_scrubber.dm,84: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/atmospherics/unary/vent_scrubber/proc/set_frequency)
+[08:00:00] Runtime in airlock_control.dm,214: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/airlock_sensor/proc/set_frequency)
+[08:00:00] Runtime in airlock_control.dm,128: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/door/airlock/proc/set_frequency)
+[08:00:00] Runtime in alarm.dm,376: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/alarm/proc/set_frequency)
+[08:00:00] Runtime in alarm.dm,376: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/alarm/proc/set_frequency)
+[08:00:00] Runtime in atmo_control.dm,152: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/computer/general_air_control/proc/set_frequency)
+[08:00:00] Runtime in airlock_control.dm,214: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/airlock_sensor/proc/set_frequency)
+[08:00:00] Runtime in radio.dm,58: Cannot execute null.remove object().
+proc name: set frequency (/obj/item/device/radio/proc/set_frequency)
+[08:00:00] Runtime in embedded_controller_base.dm,81: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/embedded_controller/radio/proc/set_frequency)
+[08:00:00] Runtime in radio.dm,58: Cannot execute null.remove object().
+proc name: set frequency (/obj/item/device/radio/proc/set_frequency)
+[08:00:00] Runtime in radio.dm,8: Cannot execute null.remove object().
+proc name: register radio (/proc/register_radio)
+[08:00:00] Runtime in embedded_controller_base.dm,81: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/embedded_controller/radio/proc/set_frequency)
+[08:00:00] Runtime in dp_vent_pump.dm,164: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/atmospherics/binary/dp_vent_pump/proc/set_frequency)
+[08:00:00] Runtime in airlock_control.dm,128: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/door/airlock/proc/set_frequency)
+[08:00:00] Runtime in airlock_control.dm,128: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/door/airlock/proc/set_frequency)
+[08:00:00] Runtime in outlet_injector.dm,90: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/atmospherics/unary/outlet_injector/proc/set_frequency)
+[08:00:00] Runtime in atmo_control.dm,63: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/air_sensor/proc/set_frequency)
+[08:00:00] Runtime in radio.dm,8: Cannot execute null.remove object().
+proc name: register radio (/proc/register_radio)
+[08:00:00] Runtime in outlet_injector.dm,90: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/atmospherics/unary/outlet_injector/proc/set_frequency)
+[08:00:00] Runtime in atmo_control.dm,63: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/air_sensor/proc/set_frequency)
+[08:00:00] Runtime in radio.dm,8: Cannot execute null.remove object().
+proc name: register radio (/proc/register_radio)
+[08:00:00] Runtime in outlet_injector.dm,90: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/atmospherics/unary/outlet_injector/proc/set_frequency)
+[08:00:00] Runtime in atmo_control.dm,63: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/air_sensor/proc/set_frequency)
+[08:00:00] Runtime in radio.dm,8: Cannot execute null.remove object().
+proc name: register radio (/proc/register_radio)
+[08:00:00] Runtime in outlet_injector.dm,90: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/atmospherics/unary/outlet_injector/proc/set_frequency)
+[08:00:00] Runtime in atmo_control.dm,63: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/air_sensor/proc/set_frequency)
+[08:00:00] Runtime in radio.dm,8: Cannot execute null.remove object().
+proc name: register radio (/proc/register_radio)
+[08:00:00] Runtime in radio.dm,8: Cannot execute null.remove object().
+proc name: register radio (/proc/register_radio)
+(This error will now be silenced for 10 minutes)
+[08:00:00] Runtime in radio.dm,58: Cannot execute null.remove object().
+proc name: set frequency (/obj/item/device/radio/proc/set_frequency)
+[08:00:00] Runtime in vent_scrubber.dm,84: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/atmospherics/unary/vent_scrubber/proc/set_frequency)
+[08:00:00] Runtime in airlock_control.dm,128: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/door/airlock/proc/set_frequency)
+[08:00:00] Runtime in airlock_control.dm,128: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/door/airlock/proc/set_frequency)
+[08:00:00] Runtime in airlock_control.dm,128: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/door/airlock/proc/set_frequency)
+[08:00:00] Runtime in airlock_control.dm,283: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/access_button/proc/set_frequency)
+[08:00:00] Runtime in vent_scrubber.dm,84: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/atmospherics/unary/vent_scrubber/proc/set_frequency)
+[08:00:00] Runtime in alarm.dm,376: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/alarm/proc/set_frequency)
+[08:00:00] Runtime in airlock_control.dm,214: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/airlock_sensor/proc/set_frequency)
+[08:00:00] Runtime in airlock_control.dm,214: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/airlock_sensor/proc/set_frequency)
+[08:00:00] Runtime in alarm.dm,376: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/alarm/proc/set_frequency)
+[08:00:00] Runtime in vent_scrubber.dm,84: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/atmospherics/unary/vent_scrubber/proc/set_frequency)
+[08:00:00] Runtime in radio.dm,58: Cannot execute null.remove object().
+proc name: set frequency (/obj/item/device/radio/proc/set_frequency)
+[08:00:00] Runtime in vent_scrubber.dm,84: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/atmospherics/unary/vent_scrubber/proc/set_frequency)
+[08:00:00] Runtime in radio.dm,58: Cannot execute null.remove object().
+proc name: set frequency (/obj/item/device/radio/proc/set_frequency)
+[08:00:00] Runtime in alarm.dm,376: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/alarm/proc/set_frequency)
+[08:00:00] Runtime in vent_scrubber.dm,84: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/atmospherics/unary/vent_scrubber/proc/set_frequency)
+[08:00:00] Runtime in embedded_controller_base.dm,81: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/embedded_controller/radio/proc/set_frequency)
+[08:00:00] Runtime in outlet_injector.dm,90: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/atmospherics/unary/outlet_injector/proc/set_frequency)
+[08:00:00] Runtime in radio.dm,58: Cannot execute null.remove object().
+proc name: set frequency (/obj/item/device/radio/proc/set_frequency)
+[08:00:00] Runtime in radio.dm,58: Cannot execute null.remove object().
+proc name: set frequency (/obj/item/device/radio/proc/set_frequency)
+(This error will now be silenced for 10 minutes)
+[08:00:00] Runtime in airlock_control.dm,128: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/door/airlock/proc/set_frequency)
+[08:00:00] Runtime in airlock_control.dm,128: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/door/airlock/proc/set_frequency)
+(This error will now be silenced for 10 minutes)
+[08:00:00] Runtime in atmo_control.dm,152: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/computer/general_air_control/proc/set_frequency)
+[08:00:00] Runtime in vent_scrubber.dm,84: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/atmospherics/unary/vent_scrubber/proc/set_frequency)
+[08:00:00] Runtime in atmo_control.dm,152: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/computer/general_air_control/proc/set_frequency)
+[08:00:00] Runtime in vent_scrubber.dm,84: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/atmospherics/unary/vent_scrubber/proc/set_frequency)
+[08:00:00] Runtime in atmo_control.dm,152: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/computer/general_air_control/proc/set_frequency)
+[08:00:00] Runtime in vent_scrubber.dm,84: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/atmospherics/unary/vent_scrubber/proc/set_frequency)
+(This error will now be silenced for 10 minutes)
+[08:00:00] Runtime in atmo_control.dm,152: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/computer/general_air_control/proc/set_frequency)
+[08:00:00] Runtime in airlock_control.dm,283: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/access_button/proc/set_frequency)
+[08:00:00] Runtime in airlock_control.dm,283: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/access_button/proc/set_frequency)
+[08:00:00] Runtime in airlock_control.dm,283: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/access_button/proc/set_frequency)
+[08:00:00] Runtime in airlock_control.dm,283: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/access_button/proc/set_frequency)
+[08:00:00] Runtime in alarm.dm,376: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/alarm/proc/set_frequency)
+(This error will now be silenced for 10 minutes)
+[08:00:00] Runtime in airlock_control.dm,283: Cannot execute null.remove object().
+[08:00:00] Runtime in embedded_controller_base.dm,81: Cannot execute null.remove object().
+[08:00:00] Runtime in airlock_control.dm,214: Cannot execute null.remove object().
+[08:00:00] Runtime in embedded_controller_base.dm,81: Cannot execute null.remove object().
+[08:00:00] Runtime in airlock_control.dm,283: Cannot execute null.remove object().
+[08:00:00] Runtime in airlock_control.dm,283: Cannot execute null.remove object().
+(This error will now be silenced for 10 minutes)
+[08:00:00] Runtime in embedded_controller_base.dm,81: Cannot execute null.remove object().
+[08:00:00] Runtime in embedded_controller_base.dm,81: Cannot execute null.remove object().
+[08:00:00] Runtime in atmo_control.dm,152: Cannot execute null.remove object().
+[08:00:00] Runtime in atmo_control.dm,152: Cannot execute null.remove object().
+[08:00:00] Runtime in atmo_control.dm,152: Cannot execute null.remove object().
+[08:00:00] Runtime in atmo_control.dm,152: Cannot execute null.remove object().
+[08:00:00] Runtime in embedded_controller_base.dm,81: Cannot execute null.remove object().
+[08:00:00] Runtime in atmo_control.dm,152: Cannot execute null.remove object().
+(This error will now be silenced for 10 minutes)
+[08:00:00] Runtime in embedded_controller_base.dm,81: Cannot execute null.remove object().
+(This error will now be silenced for 10 minutes)
+[08:00:00] Runtime in airlock_control.dm,214: Cannot execute null.remove object().
+[08:00:00] Runtime in atmo_control.dm,63: Cannot execute null.remove object().
+[08:00:00] Runtime in outlet_injector.dm,90: Cannot execute null.remove object().
+[08:00:00] Runtime in outlet_injector.dm,90: Cannot execute null.remove object().
+[08:00:00] Runtime in atmo_control.dm,63: Cannot execute null.remove object().
+[08:00:00] Runtime in outlet_injector.dm,90: Cannot execute null.remove object().
+[08:00:00] Runtime in atmo_control.dm,63: Cannot execute null.remove object().
+[08:00:00] Runtime in airlock_control.dm,214: Cannot execute null.remove object().
+[08:00:00] Runtime in airlock_control.dm,214: Cannot execute null.remove object().
+[08:00:00] Runtime in atmo_control.dm,63: Cannot execute null.remove object().
+[08:00:00] Runtime in dp_vent_pump.dm,164: Cannot execute null.remove object().
+[08:00:00] Runtime in atmo_control.dm,63: Cannot execute null.remove object().
+(This error will now be silenced for 10 minutes)
+[08:00:00] Runtime in outlet_injector.dm,90: Cannot execute null.remove object().
+(This error will now be silenced for 10 minutes)
+[08:00:00] Runtime in airlock_control.dm,214: Cannot execute null.remove object().
+(This error will now be silenced for 10 minutes)
+[08:00:00] Runtime in mech_sensor.dm,74: Cannot execute null.add object().
+[08:00:00] Runtime in mech_sensor.dm,74: Cannot execute null.add object().
+[08:00:00] Runtime in mech_sensor.dm,74: Cannot execute null.add object().
+[08:00:00] Runtime in mech_sensor.dm,74: Cannot execute null.add object().
+[08:00:00] Runtime in mech_sensor.dm,74: Cannot execute null.add object().
+[08:00:00] Runtime in mech_sensor.dm,74: Cannot execute null.add object().
+
+BYOND hub reports port 11111 cannot be reached by players.
+
+A firewall or router may be interfering with your connection. For information on hosting worlds through a firewall or router, please visit BYOND Help or portforward.com.
+
+Initialized Master Controller in 30.6s.
+Stopped server.
+World opened on network port 11111.
+Running revision:
+Preformace_Update
+
+997888a693104e215144f89f104db48d3cd7909b
+Setting up world...
+
+Your server failed to establish a connection with the feedback database.
+
+Your server failed to establish a connection with the SQL database.
+Initialized world in 3.1s.
+Setting up master controller
+
+BYOND hub reports port 11111 cannot be reached by players.
+
+A firewall or router may be interfering with your connection. For information on hosting worlds through a firewall or router, please visit BYOND Help or portforward.com.
+
+Initialized Master Controller in 30.4s.
+Stopped server.
+World opened on network port 11111.
+Running revision:
+Preformace_Update
+
+997888a693104e215144f89f104db48d3cd7909b
+Setting up world...
+Initialized world in 0s.
+[20:00:00] Runtime in names.dm,183: Cannot read null.general
+proc name: generate code phrase (/proc/generate_code_phrase)
+src: null
+call stack:
+generate code phrase()
+/datum/controller/game_control... (/datum/controller/game_controller): New()
+world: New()
+[20:00:00] Runtime in names.dm,183: Cannot read null.general
+proc name: generate code phrase (/proc/generate_code_phrase)
+src: null
+call stack:
+generate code phrase()
+/datum/controller/game_control... (/datum/controller/game_controller): New()
+world: New()
+Setting up master controller
+[20:00:00] Runtime in radio.dm,58: Cannot execute null.remove object().
+proc name: set frequency (/obj/item/device/radio/proc/set_frequency)
+src: the station intercom (General) (/obj/item/device/radio/intercom)
+src.loc: null
+call stack:
+the station intercom (General) (/obj/item/device/radio/intercom): set frequency(1459)
+the station intercom (General) (/obj/item/device/radio/intercom): initialize()
+/datum/controller/game_control... (/datum/controller/game_controller): setup objects()
+/datum/controller/game_control... (/datum/controller/game_controller): setup()
+world: New()
+[20:00:00] Runtime in alarm.dm,376: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/alarm/proc/set_frequency)
+src: Solar Maintenance - Aft Port A... (/obj/machinery/alarm)
+src.loc: the plating (96,60,1) (/turf/simulated/floor/plating)
+call stack:
+Solar Maintenance - Aft Port A... (/obj/machinery/alarm): set frequency(1439)
+Solar Maintenance - Aft Port A... (/obj/machinery/alarm): initialize()
+/datum/controller/game_control... (/datum/controller/game_controller): setup objects()
+/datum/controller/game_control... (/datum/controller/game_controller): setup()
+world: New()
+[20:00:00] Runtime in airlock_control.dm,283: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/access_button/proc/set_frequency)
+src: the exterior access button (/obj/machinery/access_button)
+src.loc: the airless plating (90,61,1) (/turf/simulated/floor/airless)
+call stack:
+the exterior access button (/obj/machinery/access_button): set frequency(1379)
+the exterior access button (/obj/machinery/access_button): initialize()
+/datum/controller/game_control... (/datum/controller/game_controller): setup objects()
+/datum/controller/game_control... (/datum/controller/game_controller): setup()
+world: New()
+[20:00:00] Runtime in airlock_control.dm,128: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/door/airlock/proc/set_frequency)
+src: Engineering External Access (/obj/machinery/door/airlock/external)
+src.loc: the plating (91,61,1) (/turf/simulated/floor/plating)
+call stack:
+Engineering External Access (/obj/machinery/door/airlock/external): set frequency(1379)
+Engineering External Access (/obj/machinery/door/airlock/external): initialize()
+/datum/controller/game_control... (/datum/controller/game_controller): setup objects()
+/datum/controller/game_control... (/datum/controller/game_controller): setup()
+world: New()
+[20:00:00] Runtime in embedded_controller_base.dm,81: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/embedded_controller/radio/proc/set_frequency)
+src: Airlock Controller (/obj/machinery/embedded_controller/radio/airlock/airlock_controller)
+src.loc: the plating (92,61,1) (/turf/simulated/floor/plating)
+call stack:
+Airlock Controller (/obj/machinery/embedded_controller/radio/airlock/airlock_controller): set frequency(1379)
+Airlock Controller (/obj/machinery/embedded_controller/radio/airlock/airlock_controller): initialize()
+Airlock Controller (/obj/machinery/embedded_controller/radio/airlock/airlock_controller): initialize()
+/datum/controller/game_control... (/datum/controller/game_controller): setup objects()
+/datum/controller/game_control... (/datum/controller/game_controller): setup()
+world: New()
+[20:00:00] Runtime in airlock_control.dm,214: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/airlock_sensor/proc/set_frequency)
+src: the airlock sensor (/obj/machinery/airlock_sensor)
+src.loc: the plating (92,61,1) (/turf/simulated/floor/plating)
+call stack:
+the airlock sensor (/obj/machinery/airlock_sensor): set frequency(1379)
+the airlock sensor (/obj/machinery/airlock_sensor): initialize()
+/datum/controller/game_control... (/datum/controller/game_controller): setup objects()
+/datum/controller/game_control... (/datum/controller/game_controller): setup()
+world: New()
+[20:00:00] Runtime in radio.dm,8: Cannot execute null.remove object().
+proc name: register radio (/proc/register_radio)
+src: null
+call stack:
+register radio(Large Air Vent (/obj/machinery/atmospherics/unary/vent_pump/high_volume), 1379, 1379, null)
+Large Air Vent (/obj/machinery/atmospherics/unary/vent_pump/high_volume): initialize()
+/datum/controller/game_control... (/datum/controller/game_controller): setup objects()
+/datum/controller/game_control... (/datum/controller/game_controller): setup()
+world: New()
+[20:00:00] Runtime in airlock_control.dm,128: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/door/airlock/proc/set_frequency)
+src: Engineering External Access (/obj/machinery/door/airlock/external)
+src.loc: the plating (93,61,1) (/turf/simulated/floor/plating)
+call stack:
+Engineering External Access (/obj/machinery/door/airlock/external): set frequency(1379)
+Engineering External Access (/obj/machinery/door/airlock/external): initialize()
+/datum/controller/game_control... (/datum/controller/game_controller): setup objects()
+/datum/controller/game_control... (/datum/controller/game_controller): setup()
+world: New()
+[20:00:00] Runtime in airlock_control.dm,283: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/access_button/proc/set_frequency)
+src: the interior access button (/obj/machinery/access_button)
+src.loc: the plating (94,61,1) (/turf/simulated/floor/plating)
+call stack:
+the interior access button (/obj/machinery/access_button): set frequency(1379)
+the interior access button (/obj/machinery/access_button): initialize()
+/datum/controller/game_control... (/datum/controller/game_controller): setup objects()
+/datum/controller/game_control... (/datum/controller/game_controller): setup()
+world: New()
+[20:00:00] Runtime in alarm.dm,376: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/alarm/proc/set_frequency)
+src: Engine Maintenance Air Alarm (/obj/machinery/alarm)
+src.loc: the plating (104,61,1) (/turf/simulated/floor/plating)
+call stack:
+Engine Maintenance Air Alarm (/obj/machinery/alarm): set frequency(1439)
+Engine Maintenance Air Alarm (/obj/machinery/alarm): initialize()
+/datum/controller/game_control... (/datum/controller/game_controller): setup objects()
+/datum/controller/game_control... (/datum/controller/game_controller): setup()
+world: New()
+[20:00:00] Runtime in radio.dm,58: Cannot execute null.remove object().
+proc name: set frequency (/obj/item/device/radio/proc/set_frequency)
+src: the station bounced radio (/obj/item/device/radio)
+src.loc: Supermatter (/obj/machinery/power/supermatter)
+call stack:
+the station bounced radio (/obj/item/device/radio): set frequency(1459)
+the station bounced radio (/obj/item/device/radio): initialize()
+/datum/controller/game_control... (/datum/controller/game_controller): setup objects()
+/datum/controller/game_control... (/datum/controller/game_controller): setup()
+world: New()
+[20:00:00] Runtime in radio.dm,86: Cannot execute null.add object().
+proc name: initialize (/obj/item/device/radio/initialize)
+src: the station bounced radio (/obj/item/device/radio)
+src.loc: Supermatter (/obj/machinery/power/supermatter)
+call stack:
+the station bounced radio (/obj/item/device/radio): initialize()
+/datum/controller/game_control... (/datum/controller/game_controller): setup objects()
+/datum/controller/game_control... (/datum/controller/game_controller): setup()
+world: New()
+[20:00:00] Runtime in outlet_injector.dm,90: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/atmospherics/unary/outlet_injector/proc/set_frequency)
+src: Coolant Injector (/obj/machinery/atmospherics/unary/outlet_injector)
+src.loc: the reinforced floor (112,62,1) (/turf/simulated/floor/reinforced)
+call stack:
+Coolant Injector (/obj/machinery/atmospherics/unary/outlet_injector): set frequency(1438)
+Coolant Injector (/obj/machinery/atmospherics/unary/outlet_injector): initialize()
+/datum/controller/game_control... (/datum/controller/game_controller): setup objects()
+/datum/controller/game_control... (/datum/controller/game_controller): setup()
+world: New()
+[20:00:00] Runtime in atmo_control.dm,63: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/air_sensor/proc/set_frequency)
+src: Gas Sensor (/obj/machinery/air_sensor)
+src.loc: the reinforced floor (113,62,1) (/turf/simulated/floor/reinforced)
+call stack:
+Gas Sensor (/obj/machinery/air_sensor): set frequency(1438)
+Gas Sensor (/obj/machinery/air_sensor): initialize()
+/datum/controller/game_control... (/datum/controller/game_controller): setup objects()
+/datum/controller/game_control... (/datum/controller/game_controller): setup()
+world: New()
+[20:00:00] Runtime in radio.dm,8: Cannot execute null.remove object().
+proc name: register radio (/proc/register_radio)
+src: null
+call stack:
+register radio(Engine Core Vent (/obj/machinery/atmospherics/unary/vent_pump/engine), 1438, 1438, null)
+Engine Core Vent (/obj/machinery/atmospherics/unary/vent_pump/engine): initialize()
+/datum/controller/game_control... (/datum/controller/game_controller): setup objects()
+/datum/controller/game_control... (/datum/controller/game_controller): setup()
+world: New()
+[20:00:00] Runtime in alarm.dm,376: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/alarm/proc/set_frequency)
+src: the Engine Waste Handling Air ... (/obj/machinery/alarm)
+src.loc: the plating (102,64,1) (/turf/simulated/floor/plating)
+call stack:
+the Engine Waste Handling Air ... (/obj/machinery/alarm): set frequency(1439)
+the Engine Waste Handling Air ... (/obj/machinery/alarm): initialize()
+/datum/controller/game_control... (/datum/controller/game_controller): setup objects()
+/datum/controller/game_control... (/datum/controller/game_controller): setup()
+world: New()
+[20:00:00] Runtime in radio.dm,8: Cannot execute null.remove object().
+proc name: register radio (/proc/register_radio)
+src: null
+call stack:
+register radio(Air Vent (/obj/machinery/atmospherics/unary/vent_pump/on), 1439, 1439, "radio_airalarm_rcvr")
+Air Vent (/obj/machinery/atmospherics/unary/vent_pump/on): initialize()
+/datum/controller/game_control... (/datum/controller/game_controller): setup objects()
+/datum/controller/game_control... (/datum/controller/game_controller): setup()
+world: New()
+[20:00:00] Runtime in radio.dm,58: Cannot execute null.remove object().
+proc name: set frequency (/obj/item/device/radio/proc/set_frequency)
+[20:00:00] Runtime in vent_scrubber.dm,84: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/atmospherics/unary/vent_scrubber/proc/set_frequency)
+[20:00:00] Runtime in alarm.dm,376: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/alarm/proc/set_frequency)
+[20:00:00] Runtime in radio.dm,8: Cannot execute null.remove object().
+proc name: register radio (/proc/register_radio)
+[20:00:00] Runtime in vent_scrubber.dm,84: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/atmospherics/unary/vent_scrubber/proc/set_frequency)
+[20:00:00] Runtime in airlock_control.dm,214: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/airlock_sensor/proc/set_frequency)
+[20:00:00] Runtime in airlock_control.dm,128: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/door/airlock/proc/set_frequency)
+[20:00:00] Runtime in alarm.dm,376: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/alarm/proc/set_frequency)
+[20:00:00] Runtime in alarm.dm,376: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/alarm/proc/set_frequency)
+[20:00:00] Runtime in atmo_control.dm,152: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/computer/general_air_control/proc/set_frequency)
+[20:00:00] Runtime in airlock_control.dm,214: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/airlock_sensor/proc/set_frequency)
+[20:00:00] Runtime in radio.dm,58: Cannot execute null.remove object().
+proc name: set frequency (/obj/item/device/radio/proc/set_frequency)
+[20:00:00] Runtime in embedded_controller_base.dm,81: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/embedded_controller/radio/proc/set_frequency)
+[20:00:00] Runtime in radio.dm,58: Cannot execute null.remove object().
+proc name: set frequency (/obj/item/device/radio/proc/set_frequency)
+[20:00:00] Runtime in radio.dm,8: Cannot execute null.remove object().
+proc name: register radio (/proc/register_radio)
+[20:00:00] Runtime in embedded_controller_base.dm,81: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/embedded_controller/radio/proc/set_frequency)
+[20:00:00] Runtime in dp_vent_pump.dm,164: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/atmospherics/binary/dp_vent_pump/proc/set_frequency)
+[20:00:00] Runtime in radio.dm,58: Cannot execute null.remove object().
+proc name: set frequency (/obj/item/device/radio/proc/set_frequency)
+[20:00:00] Runtime in airlock_control.dm,128: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/door/airlock/proc/set_frequency)
+[20:00:00] Runtime in airlock_control.dm,128: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/door/airlock/proc/set_frequency)
+[20:00:00] Runtime in outlet_injector.dm,90: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/atmospherics/unary/outlet_injector/proc/set_frequency)
+[20:00:00] Runtime in atmo_control.dm,63: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/air_sensor/proc/set_frequency)
+[20:00:00] Runtime in radio.dm,8: Cannot execute null.remove object().
+proc name: register radio (/proc/register_radio)
+[20:00:00] Runtime in outlet_injector.dm,90: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/atmospherics/unary/outlet_injector/proc/set_frequency)
+[20:00:00] Runtime in atmo_control.dm,63: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/air_sensor/proc/set_frequency)
+[20:00:00] Runtime in radio.dm,8: Cannot execute null.remove object().
+proc name: register radio (/proc/register_radio)
+[20:00:00] Runtime in outlet_injector.dm,90: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/atmospherics/unary/outlet_injector/proc/set_frequency)
+[20:00:00] Runtime in atmo_control.dm,63: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/air_sensor/proc/set_frequency)
+[20:00:00] Runtime in radio.dm,8: Cannot execute null.remove object().
+proc name: register radio (/proc/register_radio)
+[20:00:00] Runtime in outlet_injector.dm,90: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/atmospherics/unary/outlet_injector/proc/set_frequency)
+[20:00:00] Runtime in atmo_control.dm,63: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/air_sensor/proc/set_frequency)
+[20:00:00] Runtime in radio.dm,8: Cannot execute null.remove object().
+proc name: register radio (/proc/register_radio)
+[20:00:00] Runtime in radio.dm,8: Cannot execute null.remove object().
+proc name: register radio (/proc/register_radio)
+(This error will now be silenced for 10 minutes)
+[20:00:00] Runtime in radio.dm,58: Cannot execute null.remove object().
+proc name: set frequency (/obj/item/device/radio/proc/set_frequency)
+[20:00:00] Runtime in vent_scrubber.dm,84: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/atmospherics/unary/vent_scrubber/proc/set_frequency)
+[20:00:00] Runtime in airlock_control.dm,128: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/door/airlock/proc/set_frequency)
+[20:00:00] Runtime in airlock_control.dm,128: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/door/airlock/proc/set_frequency)
+[20:00:00] Runtime in airlock_control.dm,128: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/door/airlock/proc/set_frequency)
+[20:00:00] Runtime in airlock_control.dm,283: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/access_button/proc/set_frequency)
+[20:00:00] Runtime in vent_scrubber.dm,84: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/atmospherics/unary/vent_scrubber/proc/set_frequency)
+[20:00:00] Runtime in alarm.dm,376: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/alarm/proc/set_frequency)
+[20:00:00] Runtime in airlock_control.dm,214: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/airlock_sensor/proc/set_frequency)
+[20:00:00] Runtime in airlock_control.dm,214: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/airlock_sensor/proc/set_frequency)
+[20:00:00] Runtime in alarm.dm,376: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/alarm/proc/set_frequency)
+[20:00:00] Runtime in vent_scrubber.dm,84: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/atmospherics/unary/vent_scrubber/proc/set_frequency)
+[20:00:00] Runtime in radio.dm,58: Cannot execute null.remove object().
+proc name: set frequency (/obj/item/device/radio/proc/set_frequency)
+[20:00:00] Runtime in vent_scrubber.dm,84: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/atmospherics/unary/vent_scrubber/proc/set_frequency)
+[20:00:00] Runtime in radio.dm,58: Cannot execute null.remove object().
+proc name: set frequency (/obj/item/device/radio/proc/set_frequency)
+[20:00:00] Runtime in alarm.dm,376: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/alarm/proc/set_frequency)
+[20:00:00] Runtime in vent_scrubber.dm,84: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/atmospherics/unary/vent_scrubber/proc/set_frequency)
+[20:00:00] Runtime in embedded_controller_base.dm,81: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/embedded_controller/radio/proc/set_frequency)
+[20:00:00] Runtime in outlet_injector.dm,90: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/atmospherics/unary/outlet_injector/proc/set_frequency)
+[20:00:00] Runtime in radio.dm,58: Cannot execute null.remove object().
+proc name: set frequency (/obj/item/device/radio/proc/set_frequency)
+(This error will now be silenced for 10 minutes)
+[20:00:00] Runtime in airlock_control.dm,128: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/door/airlock/proc/set_frequency)
+[20:00:00] Runtime in airlock_control.dm,128: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/door/airlock/proc/set_frequency)
+(This error will now be silenced for 10 minutes)
+[20:00:00] Runtime in atmo_control.dm,152: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/computer/general_air_control/proc/set_frequency)
+[20:00:00] Runtime in vent_scrubber.dm,84: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/atmospherics/unary/vent_scrubber/proc/set_frequency)
+[20:00:00] Runtime in atmo_control.dm,152: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/computer/general_air_control/proc/set_frequency)
+[20:00:00] Runtime in vent_scrubber.dm,84: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/atmospherics/unary/vent_scrubber/proc/set_frequency)
+[20:00:00] Runtime in atmo_control.dm,152: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/computer/general_air_control/proc/set_frequency)
+[20:00:00] Runtime in vent_scrubber.dm,84: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/atmospherics/unary/vent_scrubber/proc/set_frequency)
+(This error will now be silenced for 10 minutes)
+[20:00:00] Runtime in atmo_control.dm,152: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/computer/general_air_control/proc/set_frequency)
+[20:00:00] Runtime in airlock_control.dm,283: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/access_button/proc/set_frequency)
+[20:00:00] Runtime in airlock_control.dm,283: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/access_button/proc/set_frequency)
+[20:00:00] Runtime in airlock_control.dm,283: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/access_button/proc/set_frequency)
+[20:00:00] Runtime in airlock_control.dm,283: Cannot execute null.remove object().
+proc name: set frequency (/obj/machinery/access_button/proc/set_frequency)
+[20:00:00] Runtime in alarm.dm,376: Cannot execute null.remove object().
+(This error will now be silenced for 10 minutes)
+[20:00:00] Runtime in airlock_control.dm,283: Cannot execute null.remove object().
+[20:00:00] Runtime in embedded_controller_base.dm,81: Cannot execute null.remove object().
+[20:00:00] Runtime in airlock_control.dm,214: Cannot execute null.remove object().
+[20:00:00] Runtime in embedded_controller_base.dm,81: Cannot execute null.remove object().
+[20:00:00] Runtime in airlock_control.dm,283: Cannot execute null.remove object().
+[20:00:00] Runtime in airlock_control.dm,283: Cannot execute null.remove object().
+(This error will now be silenced for 10 minutes)
+[20:00:00] Runtime in embedded_controller_base.dm,81: Cannot execute null.remove object().
+[20:00:00] Runtime in embedded_controller_base.dm,81: Cannot execute null.remove object().
+[20:00:00] Runtime in atmo_control.dm,152: Cannot execute null.remove object().
+[20:00:00] Runtime in atmo_control.dm,152: Cannot execute null.remove object().
+[20:00:00] Runtime in atmo_control.dm,152: Cannot execute null.remove object().
+[20:00:00] Runtime in atmo_control.dm,152: Cannot execute null.remove object().
+[20:00:00] Runtime in embedded_controller_base.dm,81: Cannot execute null.remove object().
+[20:00:00] Runtime in atmo_control.dm,152: Cannot execute null.remove object().
+(This error will now be silenced for 10 minutes)
+[20:00:00] Runtime in embedded_controller_base.dm,81: Cannot execute null.remove object().
+(This error will now be silenced for 10 minutes)
+[20:00:00] Runtime in airlock_control.dm,214: Cannot execute null.remove object().
+[20:00:00] Runtime in atmo_control.dm,63: Cannot execute null.remove object().
+[20:00:00] Runtime in outlet_injector.dm,90: Cannot execute null.remove object().
+[20:00:00] Runtime in outlet_injector.dm,90: Cannot execute null.remove object().
+[20:00:00] Runtime in atmo_control.dm,63: Cannot execute null.remove object().
+[20:00:00] Runtime in outlet_injector.dm,90: Cannot execute null.remove object().
+[20:00:00] Runtime in atmo_control.dm,63: Cannot execute null.remove object().
+[20:00:00] Runtime in airlock_control.dm,214: Cannot execute null.remove object().
+[20:00:00] Runtime in airlock_control.dm,214: Cannot execute null.remove object().
+[20:00:00] Runtime in atmo_control.dm,63: Cannot execute null.remove object().
+[20:00:00] Runtime in dp_vent_pump.dm,164: Cannot execute null.remove object().
+[20:00:00] Runtime in atmo_control.dm,63: Cannot execute null.remove object().
+(This error will now be silenced for 10 minutes)
+[20:00:00] Runtime in outlet_injector.dm,90: Cannot execute null.remove object().
+(This error will now be silenced for 10 minutes)
+[20:00:00] Runtime in airlock_control.dm,214: Cannot execute null.remove object().
+(This error will now be silenced for 10 minutes)
+[20:00:00] Runtime in mech_sensor.dm,74: Cannot execute null.add object().
+[20:00:00] Runtime in mech_sensor.dm,74: Cannot execute null.add object().
+[20:00:00] Runtime in mech_sensor.dm,74: Cannot execute null.add object().
+[20:00:00] Runtime in mech_sensor.dm,74: Cannot execute null.add object().
+[20:00:00] Runtime in mech_sensor.dm,74: Cannot execute null.add object().
+[20:00:00] Runtime in mech_sensor.dm,74: Cannot execute null.add object().
+
+BYOND hub reports port 11111 cannot be reached by players.
+
+A firewall or router may be interfering with your connection. For information on hosting worlds through a firewall or router, please visit BYOND Help or portforward.com.
+
+Initialized Master Controller in 31.3s.
+Stopped server.
