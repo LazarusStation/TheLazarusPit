@@ -1,16 +1,15 @@
 /datum/job/nanotrasenrep
-	title = "Nanotrasen Representative"
-	department_flag = COM
-	total_positions = 1
-	spawn_positions = 1
-	supervisors     = "the command staff"
-
-	selection_color  = "#ddddff"
-	faction          = "Station"
-	req_admin_notify = 1
-
-	minimal_player_age = 50
+	title       = "Nanotrasen Representative"
+	faction     = "Station"
+	supervisors = "the command staff"
+	department_flag   = COM
+	total_positions   = 1
+	spawn_positions   = 1
+	req_admin_notify  = 1
 	economic_modifier = 20
+	selection_color   = "#b80934"
+	minimal_player_age = 50
+
 
 	access = list(access_security, access_sec_doors, access_brig, access_forensics_lockers,
 			            access_medical, access_engine, access_change_ids, access_ai_upload, access_eva, access_heads,
@@ -35,17 +34,18 @@
 
 
 /datum/job/judge
-	title = "Corporate Arbiter"
-	department_flag = COM
-	total_positions = 1
-	spawn_positions = 1
+	title       = "Corporate Arbiter"
+	faction     = "Station"
 	supervisors = "the Nanotrasen Supreme Court"
-	selection_color = "#ddddff"
+	department_flag   = COM
+	total_positions   = 1
+	spawn_positions   = 1
+	selection_color   = "#b80934"
 	economic_modifier = 20
-	req_admin_notify = 1
+	req_admin_notify  = 1
 	minimal_player_age = 50
+	alt_titles = list("Magistrate")
 
-	faction          = "Station"
 	access = list(access_security, access_eva, access_sec_doors, access_brig, access_maint_tunnels, access_morgue, access_external_airlocks)
 	minimal_access = list(access_security, access_eva, access_sec_doors, access_brig, access_maint_tunnels, access_external_airlocks)
 
@@ -59,16 +59,16 @@
 
 
 /datum/job/blueshield
-	title = "Blueshield"
-	department_flag = COM
-	total_positions = 1
-	spawn_positions = 1
+	title       = "Blueshield"
+	faction     = "Station"
 	supervisors = "the Nanotrasen representative"
-	selection_color = "#ddddff"
-	req_admin_notify = 1
+	department_flag   = COM
+	total_positions   = 1
+	spawn_positions   = 1
+	economic_modifier = 20
+	req_admin_notify  = 1
+	selection_color   = "#b80934"
 	minimal_player_age = 30
-
-	faction          = "Station"
 
 	access = list(access_security, access_eva, access_sec_doors, access_brig, access_armory,
 			            access_forensics_lockers, access_morgue, access_maint_tunnels, access_all_personal_lockers,
@@ -88,15 +88,16 @@
 
 
 /datum/job/lawyer
-	title = "Lawyer"
+	title       = "Lawyer"
+	faction     = "Station"
+	supervisors = "the magistrate"
 	department_flag = COM
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "the magistrate"
-	selection_color = "#ddddff"
-	alt_titles = list("Prosecutor")
+	selection_color = "#b80934"
 	minimal_player_age = 10
-	faction          = "Station"
+	economic_modifier  = 10
+	alt_titles = list("Prosecutor")
 
 	access = list(access_lawyer, access_sec_doors, access_maint_tunnels, access_heads)
 	minimal_access = list(access_lawyer, access_sec_doors, access_heads)
@@ -110,18 +111,18 @@
 
 
 /datum/job/station_marshal
-	title = "Station Marshal"
+	title       = "Station Marshal"
+	faction     = "Station"
+	supervisors = "the head of security"
 	department_flag = COM
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the head of security"
-	selection_color = "#ddddff"
+	selection_color = "#b80934"
 	minimal_player_age = 10
+	economic_modifier  = 10
 
-	access = list()
-
-	faction          = "Station"
-	minimal_access = list()
+	access = list(access_security, access_eva, access_sec_doors, access_brig, access_maint_tunnels, access_morgue, access_external_airlocks)
+	minimal_access = list(access_security, access_eva, access_sec_doors, access_brig, access_maint_tunnels, access_external_airlocks)
 
 	outfit_type = /decl/hierarchy/outfit/job/station_marshal
 
