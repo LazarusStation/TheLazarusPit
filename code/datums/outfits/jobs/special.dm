@@ -4,9 +4,9 @@
 	shoes    = /obj/item/clothing/shoes/laceup
 	glasses  = /obj/item/clothing/glasses/sunglasses
 	l_ear    = /obj/item/device/radio/headset/heads/hop
-	id_type  = /obj/item/weapon/card/id/civilian/head
+	id_type  = /obj/item/weapon/card/id/civilian/head/ntrep
 	pda_type = /obj/item/device/pda/heads
-	backpack_contents = list(/obj/item/weapon/lighter/zippo/nt_rep, /obj/item/weapon/melee/classic_baton/ntcane)
+	backpack_contents = list(/obj/item/weapon/lighter/zippo/nt_rep = 1, /obj/item/weapon/melee/classic_baton/ntcane = 1)
 
 
 /decl/hierarchy/outfit/job/blueshield
@@ -17,9 +17,8 @@
 	shoes    = /obj/item/clothing/shoes/tactical
 	backpack = /obj/item/weapon/storage/backpack/security
 	gloves   = /obj/item/clothing/gloves/thick/combat
-	id_type  = /obj/item/weapon/card/id/civilian/head
+	id_type  = /obj/item/weapon/card/id/civilian/head/blueshield
 	pda_type = /obj/item/device/pda/heads
-	backpack_contents = list()
 
 
 /decl/hierarchy/outfit/job/judge
@@ -28,7 +27,7 @@
 	uniform  = /obj/item/clothing/under/suit_jacket/ca_suit
 	l_ear    = /obj/item/device/radio/headset/heads/captain
 	shoes    = /obj/item/clothing/shoes/brown
-	id_type  = /obj/item/weapon/card/id/civilian/head
+	id_type  = /obj/item/weapon/card/id/civilian/head/judge
 	pda_type = /obj/item/device/pda/heads
 
 
@@ -39,7 +38,7 @@
 	l_ear     = /obj/item/device/radio/headset/ia
 	l_hand    = /obj/item/weapon/storage/briefcase
 	glasses   = /obj/item/clothing/glasses/sunglasses
-	id_type   = /obj/item/weapon/card/id/civilian/head
+	id_type   = /obj/item/weapon/card/id/civilian/lawyer
 	pda_type  = /obj/item/device/pda/lawyer
 
 
@@ -51,7 +50,7 @@
 	glasses   = /obj/item/clothing/glasses/sunglasses/sechud
 	l_pocket = /obj/item/device/flash
 	r_pocket = /obj/item/weapon/handcuffs
-	id_type = /obj/item/weapon/card/id/security
+	id_type = /obj/item/weapon/card/id/civilian/head/station_marshal
 	pda_type = /obj/item/device/pda/security
 	backpack = /obj/item/weapon/storage/backpack/security
 	satchel_one = /obj/item/weapon/storage/backpack/satchel_sec
