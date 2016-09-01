@@ -33,6 +33,8 @@ install:
 before_script:
   - cd tgui && npm install && cd ..
   - chmod +x ./install-byond.sh
+  - chmod +x scripts/dm.sh
+  - chmod +x scripts/validateTravisContainsAllMaps.sh
   - ./install-byond.sh
 
 script:
