@@ -461,16 +461,19 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	name = "gold engraved zippo"
 	desc = "An engraved golden Zippo lighter with the letters NT on it."
 	icon_state = "zippo_nt"
+	item_state = "zippo_nt"
 
 /obj/item/weapon/lighter/zippo/blue
 	name = "blue zippo lighter"
 	desc = "A zippo lighter made of some blue metal."
 	icon_state = "bluezippo"
+	item_state = "bluezippo"
 
 /obj/item/weapon/lighter/zippo/engraved
 	name = "engraved zippo lighter"
 	desc = "A intricately engraved zippo lighter."
 	icon_state = "engravedzippo"
+	item_state = "engravedzippo"
 
 /obj/item/weapon/flame/lighter/random
 	New()
