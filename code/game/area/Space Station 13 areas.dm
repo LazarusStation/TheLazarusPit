@@ -944,6 +944,10 @@ area/space/atmosalert()
 	name = "\improper Bridge"
 	icon_state = "bridge"
 
+/area/bridge/hall
+	name = "\improper Bridge Hallway"
+	icon_state = "bridge"
+
 /area/bridge/meeting_room
 	name = "\improper Heads of Staff Meeting Room"
 	icon_state = "bridge"
