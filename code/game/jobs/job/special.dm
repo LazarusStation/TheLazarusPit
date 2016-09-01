@@ -7,7 +7,7 @@
 	spawn_positions   = 1
 	req_admin_notify  = 1
 	economic_modifier = 20
-	selection_color   = "#b80934"
+	selection_color   = "#930729"
 	minimal_player_age = 50
 
 	access = list(access_security, access_sec_doors, access_brig, access_forensics_lockers,
