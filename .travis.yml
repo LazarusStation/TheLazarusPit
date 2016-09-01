@@ -31,7 +31,6 @@ install:
   - pip install --user beautifulsoup4 -q
 
 before_script:
-  - chmod +x gradlew
   - cd tgui && npm install && cd ..
   - chmod +x ./install-byond.sh
   - ./install-byond.sh
