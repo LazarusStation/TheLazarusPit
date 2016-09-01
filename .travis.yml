@@ -7,8 +7,6 @@ env:
     BYOND_MINOR="1346"
     NODE_VERSION="4"
 
-# ALL MAPS MUST BE PRESENT HERE
-# IF THEY ARE NOT, YOUR BUILD WILL FAIL
   matrix:
     - MAP_PATH=example
     - MAP_PATH=exodus
@@ -35,6 +33,8 @@ install:
 before_script:
   - cd tgui && npm install && cd ..
   - chmod +x ./install-byond.sh
+  - chmod +x scripts/dm.sh
+  - chmod +x scripts/validateTravisContainsAllMaps.sh
   - ./install-byond.sh
 
 script:
@@ -52,6 +52,5 @@ script:
   - cd tgui && gulp
   - cd ..
   - source $HOME/BYOND-${BYOND_MAJOR}.${BYOND_MINOR}/byond/bin/byondsetup
-  - cp config/example/* config/
   - scripts/dm.sh -M$MAP_PATH baystation12.dme
   - grep ", 0 warnings" build_log.txt
