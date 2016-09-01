@@ -6,7 +6,7 @@
 	l_ear    = /obj/item/device/radio/headset/heads/hop
 	id_type  = /obj/item/weapon/card/id/civilian/head/ntrep
 	pda_type = /obj/item/device/pda/heads
-	backpack_contents = list(/obj/item/weapon/lighter/zippo/nt_rep = 1, /obj/item/weapon/melee/classic_baton/ntcane = 1)
+	backpack_contents = list(/obj/item/weapon/flame/lighter/zippo/nt_rep = 1, /obj/item/weapon/melee/classic_baton/ntcane = 1)
 
 
 /decl/hierarchy/outfit/job/blueshield
