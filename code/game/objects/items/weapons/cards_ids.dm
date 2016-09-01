@@ -408,10 +408,25 @@ var/const/NO_EMAG_ACT = -50
 /obj/item/weapon/card/id/civilian/chaplain
 	job_access_type = /datum/job/chaplain
 
+/obj/item/weapon/card/id/civilian/lawyer
+	job_access_type = /datum/job/lawyer
+
 /obj/item/weapon/card/id/civilian/head //This is not the HoP. There's no position that uses this right now.
 	name = "identification card"
 	desc = "A card which represents common sense and responsibility."
 	icon_state = "civGold"
+
+/obj/item/weapon/card/id/civilian/head/ntrep
+	job_access_type = /datum/job/nanotrasenrep
+
+/obj/item/weapon/card/id/civilian/head/judge
+	job_access_type = /datum/job/judge
+
+/obj/item/weapon/card/id/civilian/head/blueshield
+	job_access_type = /datum/job/blueshield
+
+/obj/item/weapon/card/id/civilian/head/station_marshal
+	job_access_type = /datum/job/station_marshal
 
 /obj/item/weapon/card/id/merchant
 	name = "identification card"

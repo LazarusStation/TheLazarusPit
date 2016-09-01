@@ -10,7 +10,6 @@
 	selection_color   = "#b80934"
 	minimal_player_age = 50
 
-
 	access = list(access_security, access_sec_doors, access_brig, access_forensics_lockers,
 			            access_medical, access_engine, access_change_ids, access_ai_upload, access_eva, access_heads,
 			            access_all_personal_lockers, access_maint_tunnels, access_bar, access_janitor, access_construction, access_morgue,
@@ -59,7 +58,7 @@
 
 
 /datum/job/blueshield
-	title       = "Blueshield"
+	title       = "Blueshield Agent"
 	faction     = "Station"
 	supervisors = "the Nanotrasen representative"
 	department_flag   = COM
