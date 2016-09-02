@@ -2,13 +2,13 @@
 // These are the main datums that emit light.
 
 /datum/light_source
-	var/atom/top_atom       // The atom we're emitting light from (for example a mob if we're from a flashlight that's being held).
-	var/atom/source_atom    // The atom that we belong to.
+	var/atom/top_atom        // The atom we're emitting light from (for example a mob if we're from a flashlight that's being held).
+	var/atom/source_atom     // The atom that we belong to.
 
-	var/turf/source_turf    // The turf under the above.
-	var/light_power         // Intensity of the emitter light.
-	var/light_range         // The range of the emitted light.
-	var/light_color         // The colour of the light, string, decomposed by parse_light_color()
+	var/turf/source_turf     // The turf under the above.
+	var/light_power    // Intensity of the emitter light.
+	var/light_range      // The range of the emitted light.
+	var/light_color    // The colour of the light, string, decomposed by parse_light_color()
 
 	// Variables for keeping track of the colour.
 	var/lum_r
@@ -23,11 +23,11 @@
 	var/list/datum/lighting_corner/effect_str     // List used to store how much we're affecting corners.
 	var/list/turf/affecting_turfs
 
-	var/applied             // Whether we have applied our light yet or not.
+	var/applied = FALSE // Whether we have applied our light yet or not.
 
-	var/vis_update          // Whether we should smartly recalculate visibility. and then only update tiles that became (in)visible to us.
-	var/needs_update        // Whether we are queued for an update.
-	var/destroyed           // Whether we are destroyed and need to stop emitting light.
+	var/vis_update      // Whether we should smartly recalculate visibility. and then only update tiles that became (in)visible to us.
+	var/needs_update    // Whether we are queued for an update.
+	var/destroyed       // Whether we are destroyed and need to stop emitting light.
 	var/force_update
 
 /datum/light_source/New(var/atom/owner, var/atom/top)
@@ -209,7 +209,7 @@
 	applied_lum_b = lum_b
 
 	FOR_DVIEW(var/turf/T, light_range, source_turf, INVISIBILITY_LIGHTING)
-		for(var/datum/lighting_corner/C in T.get_corners(get_dir(source_turf, T)))
+		for (var/datum/lighting_corner/C in T.get_corners())
 			if (effect_str.Find(C))
 				continue
 
@@ -254,20 +254,21 @@
 	var/list/datum/lighting_corner/corners = list()
 	var/list/turf/turfs                    = list()
 	FOR_DVIEW(var/turf/T, light_range, source_turf, 0)
-		corners |= T.get_corners(get_dir(source_turf, T))
+		corners |= T.get_corners()
 		turfs   += T
 
-	for (var/turf/T in turfs - affecting_turfs) // New turfs, add us to the affecting lights of them.
+	var/list/L = turfs - affecting_turfs // New turfs, add us to the affecting lights of them.
+	affecting_turfs += L
+	for (var/turf/T in L)
 		if (!T.affecting_lights)
 			T.affecting_lights = list(src)
 		else
 			T.affecting_lights += src
 
-	for (var/turf/T in affecting_turfs - turfs) // Now-gone turfs, remove us from the affecting lights.
-		if (!T.affecting_lights)
-			T.affecting_lights = list()
-		else
-			T.affecting_lights -= src
+	L = affecting_turfs - turfs // Now-gone turfs, remove us from the affecting lights.
+	affecting_turfs -= L
+	for (var/turf/T in L)
+		T.affecting_lights -= src
 
 	for (var/datum/lighting_corner/C in corners - effect_str) // New corners
 		C.affecting += src
@@ -278,6 +279,7 @@
 
 	for (var/datum/lighting_corner/C in effect_str - corners) // Old, now gone, corners.
 		REMOVE_CORNER(C)
+		C.affecting -= src
 		effect_str -= C
 
 #undef effect_update
