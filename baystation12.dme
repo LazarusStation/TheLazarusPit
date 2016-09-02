@@ -64,7 +64,6 @@
 #include "code\__HELPERS\type2type.dm"
 #include "code\__HELPERS\unsorted.dm"
 #include "code\__HELPERS\vector.dm"
-#include "code\__HELPERS\vg_datum_pools.dm"
 #include "code\__HELPERS\_STARTUP\MC.dm"
 #include "code\__HELPERS\_STARTUP\WORLD.dm"
 #include "code\_onclick\_defines.dm"
