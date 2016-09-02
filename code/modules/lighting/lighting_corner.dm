@@ -85,21 +85,15 @@
 	lum_g += delta_g
 	lum_b += delta_b
 
-#ifndef LIGHTING_INSTANT_UPDATES
-	if (!needs_update)
+	if(!needs_update)
 		needs_update = TRUE
 		lighting_update_corners += src
 
 /datum/lighting_corner/proc/update_overlays()
-#endif
-
-	for (var/TT in masters)
+	for(var/TT in masters)
 		var/turf/T = TT
 		if (T.lighting_overlay)
-			#ifdef LIGHTING_INSTANT_UPDATES
 			T.lighting_overlay.update_overlay()
-			#else
 			if (!T.lighting_overlay.needs_update)
 				T.lighting_overlay.needs_update = TRUE
 				lighting_update_overlays += T.lighting_overlay
-			#endif

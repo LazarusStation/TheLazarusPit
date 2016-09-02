@@ -1,37 +1,11 @@
-/var/list/lighting_update_lights    = list()    // List of lighting sources  queued for update.
-/var/list/lighting_update_corners   = list()    // List of lighting corners  queued for update.
-/var/list/lighting_update_overlays  = list()    // List of lighting overlays queued for update.
-
-/datum/controller/process/lighting
-	schedule_interval   = 1
-
-	// Counters
+/proc/init_lighting()
 	var/light_updates   = 0
 	var/corner_updates  = 0
 	var/overlay_updates = 0
-	var/workcount       = 0
 
-/datum/controller/process/lighting/setup()
-	name = "lighting"
-
-	log_to_dd("setting up lighting controller")
-	create_all_lighting_overlays()
-	create_all_lighting_corners()
-	log_to_dd("created corners & overlays")
-
-/datum/controller/process/lighting/statProcess()
-	..()
-	stat(null, "[light_updates] light updates, [workcount] total cycles")
-	stat(null, "[corner_updates] corner updates, [overlay_updates] overlay updates")
-
-/datum/controller/process/lighting/doWork()
-	light_updates   = 0
-	corner_updates  = 0
-	overlay_updates = 0
-
-#define MAX_LIGHT_UPDATES_PER_WORK   250
-#define MAX_CORNER_UPDATES_PER_WORK  1000
-#define MAX_OVERLAY_UPDATES_PER_WORK 2000
+#define MAX_LIGHT_UPDATES_PER_WORK   2000
+#define MAX_CORNER_UPDATES_PER_WORK  4000
+#define MAX_OVERLAY_UPDATES_PER_WORK 6000
 
 	var/list/lighting_update_lights_old = lighting_update_lights //We use a different list so any additions to the update lists during a delay from scheck() don't cause things to be cut from the list without being updated.
 	lighting_update_lights = list()
@@ -54,7 +28,7 @@
 
 		light_updates++
 
-		sleepCheck()
+		CHECK_TICK
 
 	var/list/lighting_update_corners_old = lighting_update_corners //Same as above.
 	lighting_update_corners = list()
@@ -81,6 +55,8 @@
 		O.update_overlay()
 		O.needs_update = 0
 		overlay_updates++
-		sleepCheck()
+		CHECK_TICK
 
-	workcount++
+#undef MAX_LIGHT_UPDATES_PER_WORK
+#undef MAX_CORNER_UPDATES_PER_WORK
+#undef MAX_OVERLAY_UPDATES_PER_WORK

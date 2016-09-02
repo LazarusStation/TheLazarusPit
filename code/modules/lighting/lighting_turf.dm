@@ -22,23 +22,24 @@
 
 /turf/proc/lighting_clear_overlay()
 	if (lighting_overlay)
-		returnToPool(lighting_overlay)
+		qdel(lighting_overlay)
 
 	for (var/datum/lighting_corner/C in corners)
 		C.update_active()
 
 // Builds a lighting overlay for us, but only if our area is dynamic.
 /turf/proc/lighting_build_overlay()
-	if (lighting_overlay)
+	if(lighting_overlay)
 		return
 
 	var/area/A = loc
-	if (A.dynamic_lighting)
-		getFromPool(/atom/movable/lighting_overlay, src)
+	if(A.dynamic_lighting)
+		var/atom/movable/lighting_overlay/O = new(src)
+		lighting_overlay = O
 
-		for (var/datum/lighting_corner/C in corners)
-			if (!C.active) // We would activate the corner, calculate the lighting for it.
-				for (var/L in C.affecting)
+		for(var/datum/lighting_corner/C in corners)
+			if(!C.active) // We would activate the corner, calculate the lighting for it.
+				for(var/L in C.affecting)
 					var/datum/light_source/S = L
 					S.recalc_corner(C)
 

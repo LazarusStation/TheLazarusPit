@@ -24,7 +24,7 @@
 	T.lighting_overlay = src
 	T.luminosity       = 0
 
-	if (no_update)
+	if(no_update)
 		return
 
 	update_overlay()
@@ -45,12 +45,11 @@
 	var/turf/T = loc
 	if (!istype(T)) // Erm...
 		if (loc)
-			warning("A lighting overlay realised its loc was NOT a turf (actual loc: [loc], [loc.type]) in update_overlay() and got pooled!")
+			warning("A lighting overlay realised its loc was NOT a turf (actual loc: [loc], [loc.type]) in update_overlay() and got deleted!")
 
 		else
-			warning("A lighting overlay realised it was in nullspace in update_overlay() and got pooled!")
-
-		returnToPool(src)
+			warning("A lighting overlay realised it was in nullspace in update_overlay() and got deleted!")
+		qdel(src)
 
 	var/list/L = src.color:Copy() // For some dumb reason BYOND won't allow me to use [] on a colour matrix directly.
 	var/max    = 0
