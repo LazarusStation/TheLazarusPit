@@ -15,7 +15,7 @@
 		if (!A.dynamic_lighting)
 			continue
 
-		getFromPool(/atom/movable/lighting_overlay, T, TRUE)
+		GetFromPool(/atom/movable/lighting_overlay, T, TRUE)
 
 /proc/create_all_lighting_corners()
 	for (var/zlevel = 1 to world.maxz)
