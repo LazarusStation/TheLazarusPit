@@ -604,6 +604,7 @@
 		if(!environment) //We're in a crate or nullspace, bail out.
 			return
 
+/*
 		var/light_string
 		if(closed_system && mechanical)
 			light_string = "that the internal lights are set to [tray_light] lumens"
@@ -617,6 +618,7 @@
 			light_string = "a light level of [light_available] lumens"
 
 		usr << "The tray's sensor suite is reporting [light_string] and a temperature of [environment.temperature]K."
+*/
 
 /obj/machinery/portable_atmospherics/hydroponics/verb/close_lid_verb()
 	set name = "Toggle Tray Lid"
