@@ -37,7 +37,6 @@ var/global/universe_has_ended = 0
 // Apply changes when entering state
 /datum/universal_state/supermatter_cascade/OnEnter()
 	set background = 1
-	garbage_collector.garbage_collect = 0
 	world << "<span class='sinister' style='font-size:22pt'>You are blinded by a brilliant flash of energy.</span>"
 
 	world << sound('sound/effects/cascade.ogg')
@@ -53,6 +52,7 @@ var/global/universe_has_ended = 0
 	MiscSet()
 	APCSet()
 	OverlayAndAmbientSet()
+
 
 	// Disable Nar-Sie.
 	cult.allow_narsie = 0
@@ -90,31 +90,35 @@ The access requirements on the Asteroid Shuttles' consoles have now been revoked
 			continue
 
 		A.updateicon()
+		CHECK_TICK
 
 /datum/universal_state/supermatter_cascade/OverlayAndAmbientSet()
-	spawn(0)
-		for(var/datum/lighting_corner/C in global.all_lighting_corners)
-			if(C.z in using_map.admin_levels)
-				C.update_lumcount(1,1,1)
-			else
-				C.update_lumcount(0.0, 0.4, 1)
+	set waitfor = FALSE
+	for(var/datum/lighting_corner/C in global.all_lighting_corners)
+		if(C.z in using_map.admin_levels)
+			C.update_lumcount(1,1,1)
+		else
+			C.update_lumcount(0.0, 0.4, 1)
+		CHECK_TICK
 
-		for(var/turf/space/T in turfs)
-			OnTurfChange(T)
+	for(var/turf/space/T in turfs)
+		OnTurfChange(T)
 
 /datum/universal_state/supermatter_cascade/proc/MiscSet()
-	for (var/obj/machinery/firealarm/alm in machines)
-		if (!(alm.stat & BROKEN))
+	for(var/obj/machinery/firealarm/alm in machines)
+		if(!(alm.stat & BROKEN))
 			alm.ex_act(2)
+		CHECK_TICK
 
 /datum/universal_state/supermatter_cascade/proc/APCSet()
-	for (var/obj/machinery/power/apc/APC in machines)
-		if (!(APC.stat & BROKEN) && !APC.is_critical)
+	for(var/obj/machinery/power/apc/APC in machines)
+		if(!(APC.stat & BROKEN) && !APC.is_critical)
 			APC.chargemode = 0
 			if(APC.cell)
 				APC.cell.charge = 0
 			APC.emagged = 1
 			APC.queue_icon_update()
+		CHECK_TICK
 
 /datum/universal_state/supermatter_cascade/proc/PlayerSet()
 	for(var/datum/mind/M in player_list)
@@ -123,5 +127,6 @@ The access requirements on the Asteroid Shuttles' consoles have now been revoked
 		if(M.current.stat!=2)
 			M.current.Weaken(10)
 			M.current.flash_eyes()
+		CHECK_TICK
 
 		clear_antag_roles(M)

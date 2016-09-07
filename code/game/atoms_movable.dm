@@ -33,12 +33,15 @@
 	. = ..()
 	for(var/atom/movable/AM in src)
 		qdel(AM)
+
 	var/turf/un_opaque
 	if(opacity && isturf(loc))
 		un_opaque = loc
+
 	forceMove(null)
 	if(un_opaque)
 		un_opaque.recalc_atom_opacity()
+
 	if(pulledby)
 		if(pulledby.pulling == src)
 			pulledby.pulling = null

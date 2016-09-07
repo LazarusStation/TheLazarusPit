@@ -577,8 +577,9 @@
 					total_phoronloss += vsc.plc.CONTAMINATION_LOSS
 			if(!(status_flags & GODMODE)) adjustToxLoss(total_phoronloss)
 
-	if(status_flags & GODMODE)	return 0	//godmode
-
+	if(status_flags & GODMODE)
+		return 0 //godmode
+/*
 	var/obj/item/organ/internal/diona/node/light_organ = locate() in internal_organs
 
 	if(!isSynthetic())
@@ -629,14 +630,15 @@
 			//traumatic_shock is updated every tick, incrementing that is pointless - shock_stage is the counter.
 			//Not that it matters much for diona, who have NO_PAIN.
 			shock_stage++
+*/
 
 	// TODO: stomach and bloodstream organ.
 	if(!isSynthetic())
 		handle_trace_chems()
 
 	updatehealth()
-
 	return //TODO: DEFERRED
+
 
 //DO NOT CALL handle_statuses() from this proc, it's called from living/Life() as long as this returns a true value.
 /mob/living/carbon/human/handle_regular_status_updates()
@@ -912,12 +914,14 @@
 		if (getToxLoss() >= 45 && nutrition > 20)
 			spawn vomit()
 
+/*
 	//0.1% chance of playing a scary sound to someone who's in complete darkness
 	if(isturf(loc) && rand(1,1000) == 1)
 		var/turf/T = loc
 		var/atom/movable/lighting_overlay/L = locate(/atom/movable/lighting_overlay) in T
 		if(L && L.lum_r + L.lum_g + L.lum_b == 0)
 			playsound_local(src,pick(scarySounds),50, 1, -1)
+*/
 
 /mob/living/carbon/human/handle_stomach()
 	spawn(0)

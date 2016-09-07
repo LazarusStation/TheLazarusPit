@@ -42,16 +42,16 @@ In short:
 // Apply changes when entering state
 /datum/universal_state/hell/OnEnter()
 	set background = 1
-	garbage_collector.garbage_collect = 0
-
 	escape_list = get_area_turfs(locate(/area/hallway/secondary/exit))
 
 	//Separated into separate procs for profiling
+
 	AreaSet()
 	MiscSet()
 	APCSet()
 	KillMobs()
 	OverlayAndAmbientSet()
+
 
 	runedec += 9000	//basically removing the rune cap
 
@@ -62,34 +62,39 @@ In short:
 			continue
 
 		A.updateicon()
+		CHECK_TICK
 
 /datum/universal_state/hell/OverlayAndAmbientSet()
-	spawn(0)
-		for(var/datum/lighting_corner/C in global.all_lighting_corners)
-			C.update_lumcount(1, 0, 0)
+	set waitfor = FALSE
+	for(var/datum/lighting_corner/C in global.all_lighting_corners)
+		C.update_lumcount(0.5, 0, 0)
+		CHECK_TICK
 
-		for(var/turf/space/T in turfs)
-			OnTurfChange(T)
+	for(var/turf/space/T in turfs)
+		OnTurfChange(T)
 
 /datum/universal_state/hell/proc/MiscSet()
 	for(var/turf/simulated/floor/T in turfs)
 		if(!T.holy && prob(1))
-			new /obj/effect/gateway/active/cult(T)
+			new/obj/effect/gateway/active/cult(T)
 
-	for (var/obj/machinery/firealarm/alm in machines)
+	for(var/obj/machinery/firealarm/alm in machines)
 		if (!(alm.stat & BROKEN))
 			alm.ex_act(2)
+		CHECK_TICK
 
 /datum/universal_state/hell/proc/APCSet()
-	for (var/obj/machinery/power/apc/APC in machines)
-		if (!(APC.stat & BROKEN) && !APC.is_critical)
+	for(var/obj/machinery/power/apc/APC in machines)
+		if(!(APC.stat & BROKEN) && !APC.is_critical)
 			APC.chargemode = 0
 			if(APC.cell)
 				APC.cell.charge = 0
 			APC.emagged = 1
 			APC.queue_icon_update()
+		CHECK_TICK
 
 /datum/universal_state/hell/proc/KillMobs()
 	for(var/mob/living/simple_animal/M in mob_list)
 		if(M && !M.client)
 			M.stat = DEAD
+		CHECK_TICK

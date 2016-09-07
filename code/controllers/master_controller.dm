@@ -47,3 +47,8 @@ var/global/initialization_stage = 0
 
 	log_green("	 Initialized Master Controller in [stop_watch(watch)]s.")
 	initialization_stage |= INITIALIZATION_COMPLETE
+
+	spawn(100)
+		log_red("Init_lights")
+		init_lighting()
+		log_red("	Finished lights")
