@@ -31,8 +31,8 @@
 
 	var/datum/spacepod/equipment/equipment_system
 
-	var/battery_type = "/obj/item/weapon/stock_parts/cell/high"
-	var/obj/item/weapon/stock_parts/cell/battery
+	var/battery_type = "/obj/item/weapon/cell/mecha"
+	var/obj/item/weapon/cell/mecha/battery
 
 	var/datum/gas_mixture/cabin_air
 	var/obj/machinery/portable_atmospherics/canister/internal_tank
@@ -40,7 +40,7 @@
 	var/datum/global_iterator/pr_int_temp_processor //normalizes internal air mixture temperature
 	var/datum/global_iterator/pr_give_air //moves air from tank to cabin
 
-	var/datum/effect/system/ion_trail_follow/space_trail/ion_trail
+	var/datum/effect/effect/system/trail/ion_trail
 
 	var/hatch_open = 0
 
@@ -56,14 +56,15 @@
 
 	var/lights = 0
 	var/lights_power = 6
-	var/list/icon_light_color = list("pod_civ" = LIGHT_COLOR_WHITE, \
+	var/list/icon_light_color = list("pod_civ" = LIGHT_COLOR_YELLOW, \
 									 "pod_mil" = "#BBF093", \
 									 "pod_synd" = LIGHT_COLOR_RED, \
-									 "pod_gold" = LIGHT_COLOR_WHITE, \
+									 "pod_gold" = LIGHT_COLOR_YELLOW, \
 									 "pod_black" = "#3B8FE5", \
 									 "pod_industrial" = "#CCCC00")
 
 	var/unlocked = 1
+	var/inertia_dir = 0
 
 	var/move_delay = 2
 	var/next_move = 0
@@ -106,9 +107,9 @@
 	battery = new battery_type(src)
 	add_cabin()
 	add_airtank()
-	src.ion_trail = new /datum/effect/system/ion_trail_follow/space_trail()
-	src.ion_trail.set_up(src)
-	src.ion_trail.start()
+	ion_trail = new /datum/effect/effect/system/trail/ion()
+	ion_trail.set_up(src)
+	ion_trail.start()
 	src.use_internal_tank = 1
 	pr_int_temp_processor = new /datum/global_iterator/pod_preserve_temp(list(src))
 	pr_give_air = new /datum/global_iterator/pod_tank_give_air(list(src))
@@ -119,7 +120,7 @@
 	cargo_hold.w_class = 5	//so you can put bags in
 	cargo_hold.storage_slots = 0	//You need to install cargo modules to use it.
 	cargo_hold.max_w_class = 5		//fit almost anything
-	cargo_hold.max_combined_w_class = 0 //you can optimize your stash with larger items
+	cargo_hold.max_storage_space = 0 //you can optimize your stash with larger items
 
 /obj/spacepod/Destroy()
 	if(equipment_system.cargo_system)
@@ -197,7 +198,7 @@
 /obj/spacepod/bullet_act(var/obj/item/projectile/P)
 	if(P.damage_type == BRUTE || P.damage_type == BURN)
 		deal_damage(P.damage)
-	else if(P.flag == "energy" && istype(P,/obj/item/projectile/ion)) //needed to make sure ions work properly
+	else if(P.check_armour == "energy" && istype(P,/obj/item/projectile/ion)) //needed to make sure ions work properly
 		empulse(src, 1, 1)
 
 /obj/spacepod/blob_act()
@@ -292,7 +293,6 @@
 				for(var/mob/M in passengers)
 					to_chat(M, "<span class='warning'>The pod console flashes 'Heavy EMP WAVE DETECTED'.</span>")//warn the passengers
 
-
 			if(battery)
 				battery.charge = max(0, battery.charge - 5000) //Cell EMP act is too weak, this pod needs to be sapped.
 			src.deal_damage(100)
@@ -327,7 +327,7 @@
 			else
 				to_chat(user, "<span class='warning'>The hatch is locked shut!</span>")
 			return
-		if(istype(W, /obj/item/weapon/stock_parts/cell))
+		if(istype(W, /obj/item/weapon/cell))
 			if(!hatch_open)
 				to_chat(user, "\red The maintenance hatch is closed!")
 				return
@@ -423,7 +423,7 @@ obj/spacepod/proc/add_equipment(mob/user, var/obj/item/device/spacepod_equipment
 		equipment_system.installed_modules += SPE
 		max_passengers += SPE.occupant_mod
 		cargo_hold.storage_slots += SPE.storage_mod["slots"]
-		cargo_hold.max_combined_w_class += SPE.storage_mod["w_class"]
+		cargo_hold.max_storage_space += SPE.storage_mod["w_class"]
 
 /obj/spacepod/attack_hand(mob/user as mob)
 	if(user.a_intent == I_GRAB && unlocked)
@@ -504,7 +504,7 @@ obj/spacepod/proc/add_equipment(mob/user, var/obj/item/device/spacepod_equipment
 	var/sum_w_class = 0
 	for(var/obj/item/I in cargo_hold.contents)
 		sum_w_class += I.w_class
-	if(cargo_hold.contents.len > cargo_hold.storage_slots - SPE.storage_mod["slots"] || sum_w_class > cargo_hold.max_combined_w_class - SPE.storage_mod["w_class"])
+	if(cargo_hold.contents.len > cargo_hold.storage_slots - SPE.storage_mod["slots"] || sum_w_class > cargo_hold.max_storage_space - SPE.storage_mod["w_class"])
 		to_chat(user, "<span class='warning'>Empty \the [SPE] first!</span>")
 		return
 
@@ -513,7 +513,7 @@ obj/spacepod/proc/add_equipment(mob/user, var/obj/item/device/spacepod_equipment
 		equipment_system.installed_modules -= SPE
 		max_passengers -= SPE.occupant_mod
 		cargo_hold.storage_slots -= SPE.storage_mod["slots"]
-		cargo_hold.max_combined_w_class -= SPE.storage_mod["w_class"]
+		cargo_hold.max_storage_space -= SPE.storage_mod["w_class"]
 		SPE.removed(user)
 		SPE.my_atom = null
 		equipment_system.vars[slot] = null
@@ -623,8 +623,7 @@ obj/spacepod/proc/add_equipment(mob/user, var/obj/item/device/spacepod_equipment
 	cabin_air = new
 	cabin_air.temperature = T20C
 	cabin_air.volume = 200
-	cabin_air.oxygen = O2STANDARD*cabin_air.volume/(R_IDEAL_GAS_EQUATION*cabin_air.temperature)
-	cabin_air.nitrogen = N2STANDARD*cabin_air.volume/(R_IDEAL_GAS_EQUATION*cabin_air.temperature)
+	cabin_air.adjust_multi("oxygen", O2STANDARD*cabin_air.volume/(R_IDEAL_GAS_EQUATION*cabin_air.temperature), "nitrogen", N2STANDARD*cabin_air.volume/(R_IDEAL_GAS_EQUATION*cabin_air.temperature))
 	return cabin_air
 
 /obj/spacepod/proc/add_airtank()
@@ -661,11 +660,11 @@ obj/spacepod/proc/add_equipment(mob/user, var/obj/item/device/spacepod_equipment
 /obj/spacepod/proc/return_temperature()
 	. = 0
 	if(use_internal_tank)
-		. = cabin_air.return_temperature()
+		. = cabin_air.temperature
 	else
 		var/datum/gas_mixture/t_air = get_turf_air()
 		if(t_air)
-			. = t_air.return_temperature()
+			. = t_air.temperature
 
 /obj/spacepod/proc/moved_other_inside(var/mob/living/carbon/human/H as mob)
 	occupant_sanity_check()
@@ -950,7 +949,7 @@ obj/spacepod/proc/add_equipment(mob/user, var/obj/item/device/spacepod_equipment
 	delay = 20
 
 	process(var/obj/spacepod/spacepod)
-		if(spacepod.cabin_air && spacepod.cabin_air.return_volume() > 0)
+		if(spacepod.cabin_air && spacepod.cabin_air.volume > 0)
 			var/delta = spacepod.cabin_air.temperature - T20C
 			spacepod.cabin_air.temperature -= max(-10, min(10, round(delta/4,0.1)))
 
@@ -967,8 +966,8 @@ obj/spacepod/proc/add_equipment(mob/user, var/obj/item/device/spacepod_equipment
 		var/pressure_delta = min(release_pressure - cabin_pressure, (tank_air.return_pressure() - cabin_pressure)/2)
 		var/transfer_moles = 0
 		if(pressure_delta > 0) //cabin pressure lower than release pressure
-			if(tank_air.return_temperature() > 0)
-				transfer_moles = pressure_delta*cabin_air.return_volume()/(cabin_air.return_temperature() * R_IDEAL_GAS_EQUATION)
+			if(tank_air.temperature > 0)
+				transfer_moles = pressure_delta*cabin_air.volume/(cabin_air.temperature * R_IDEAL_GAS_EQUATION)
 				var/datum/gas_mixture/removed = tank_air.remove(transfer_moles)
 				cabin_air.merge(removed)
 		else if(pressure_delta < 0) //cabin pressure higher than release pressure
@@ -977,7 +976,7 @@ obj/spacepod/proc/add_equipment(mob/user, var/obj/item/device/spacepod_equipment
 			if(t_air)
 				pressure_delta = min(cabin_pressure - t_air.return_pressure(), pressure_delta)
 			if(pressure_delta > 0) //if location pressure is lower than cabin pressure
-				transfer_moles = pressure_delta*cabin_air.return_volume()/(cabin_air.return_temperature() * R_IDEAL_GAS_EQUATION)
+				transfer_moles = pressure_delta*cabin_air.volume/(cabin_air.temperature * R_IDEAL_GAS_EQUATION)
 				var/datum/gas_mixture/removed = cabin_air.remove(transfer_moles)
 				if(t_air)
 					t_air.merge(removed)

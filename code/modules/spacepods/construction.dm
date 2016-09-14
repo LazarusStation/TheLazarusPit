@@ -132,7 +132,7 @@
 						"self_msg" = "You unsecure the {HOLDER}'s core."
 					),
 					state_next = list(
-						"key"      = /obj/item/stack/sheet/metal,
+						"key"      = /obj/item/stack/material/steel,
 						"amount"   = 5,
 						"vis_msg"  = "{USER} frabricates a pressure bulkhead for the {HOLDER}.",
 						"self_msg" = "You frabricate a pressure bulkhead for the {HOLDER}."
@@ -146,7 +146,7 @@
 						"vis_msg"  = "{USER} pops the {HOLDER}'s bulkhead panelling loose.",
 						"self_msg" = "You pop the {HOLDER}'s bulkhead panelling loose.",
 
-						"spawn"    = /obj/item/stack/sheet/metal,
+						"spawn"    = /obj/item/stack/material/steel,
 						"amount"   = 5,
 					),
 					state_next = list(

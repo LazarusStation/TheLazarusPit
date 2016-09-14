@@ -16,7 +16,7 @@ var/global/list/hud_icon_reference       = list()
 var/global/list/traders                  = list() //List of all nearby traders
 
 var/global/list/listening_objects         = list() // List of objects that need to be able to hear, used to avoid recursive searching through contents.
-
+var/global/list/spacepods_list = list()				//list of all space pods. Used by hostile mobs target tracking.
 
 var/global/list/global_mutations  = list() // List of hidden mutation things.
 
