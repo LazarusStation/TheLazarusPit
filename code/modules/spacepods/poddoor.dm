@@ -34,7 +34,6 @@
 				var/datum/effect/effect/system/spark_spread/s = new /datum/effect/effect/system/spark_spread
 				s.set_up(2, 1, src)
 				s.start()
-
 		if(3.0)
 			if(prob(80))
 				var/datum/effect/effect/system/spark_spread/s = new /datum/effect/effect/system/spark_spread
@@ -46,7 +45,7 @@
 	if(!( istype(C, /obj/item/weapon/crowbar && C:wielded == 1) ))
 		return
 	if((src.density && (stat & NOPOWER) && !( src.operating )))
-		spawn( 0 )
+		spawn(0)
 			src.operating = 1
 			flick("pdoorc0", src)
 			src.icon_state = "pdoor0"
@@ -57,7 +56,7 @@
 			return
 	return
 
-/obj/machinery/door/poddoor/open()
+/obj/machinery/door/poddoor/open(var/forced = 0)
 	if(!can_open(forced))
 		return
 	operating = 1
@@ -80,7 +79,7 @@
 
 	return 1
 
-/obj/machinery/door/poddoor/close()
+/obj/machinery/door/poddoor/close(var/forced = 0)
 	if(!can_close(forced))
 		return
 	operating = 1

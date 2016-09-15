@@ -201,28 +201,6 @@
 	else if(P.check_armour == "energy" && istype(P,/obj/item/projectile/ion)) //needed to make sure ions work properly
 		empulse(src, 1, 1)
 
-/obj/spacepod/blob_act()
-	deal_damage(30)
-	return
-
-/obj/spacepod/attack_animal(mob/living/simple_animal/user as mob)
-	if(user.melee_damage_upper == 0)
-		user.custom_emote(1, "[user.friendly] [src]")
-	else
-		var/damage = rand(user.melee_damage_lower, user.melee_damage_upper)
-		deal_damage(damage)
-		visible_message("<span class='danger'>[user]</span> [user.attacktext] [src]!")
-		user.attack_log += text("\[[time_stamp()]\] <font color='red'>attacked [src.name]</font>")
-	return
-
-/obj/spacepod/attack_alien(mob/user as mob)
-	user.changeNext_move(CLICK_CD_MELEE)
-	deal_damage(15)
-	playsound(src.loc, 'sound/weapons/slash.ogg', 50, 1, -1)
-	to_chat(user, "\red You slash at \the [src]!")
-	visible_message("\red The [user] slashes at [src.name]'s armor!")
-	return
-
 /obj/spacepod/proc/deal_damage(var/damage)
 	var/oldhealth = health
 	health = max(0, health - damage)
@@ -315,7 +293,7 @@
 			processing_objects.Add(src)
 
 /obj/spacepod/attackby(obj/item/W as obj, mob/user as mob, params)
-	if(user.a_intent == I_HARM)
+	if(user.a_intent == I_HURT)
 		..()
 		deal_damage(W.force)
 	else
@@ -523,10 +501,6 @@ obj/spacepod/proc/add_equipment(mob/user, var/obj/item/device/spacepod_equipment
 
 /obj/spacepod/hear_talk/hear_talk(mob/M, var/msg)
 	cargo_hold.hear_talk(M, msg)
-	..()
-
-/obj/spacepod/hear_message(mob/M, var/msg)
-	cargo_hold.hear_message(M, msg)
 	..()
 
 /obj/spacepod/proc/return_inv()

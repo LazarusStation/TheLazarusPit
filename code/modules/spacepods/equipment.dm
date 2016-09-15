@@ -2,8 +2,8 @@
 	if(my_atom.next_firetime > world.time)
 		to_chat(usr, "<span class='warning'>Your weapons are recharging.</span>")
 		return
-	var/turf/firstloc
-	var/turf/secondloc
+	var/turf/loc_one
+	var/turf/loc_two
 	if(!my_atom.equipment_system || !my_atom.equipment_system.weapon_system)
 		to_chat(usr, "<span class='warning'>Missing equipment or weapons.</span>")
 		my_atom.verbs -= text2path("[type]/proc/fire_weapons")
@@ -14,32 +14,33 @@
 		if(olddir != my_atom.dir)
 			switch(my_atom.dir)
 				if(NORTH)
-					firstloc = get_step(my_atom, NORTH)
-					secondloc = get_step(firstloc,EAST)
+					loc_one = get_step(my_atom, NORTH)
+					loc_two = get_step(loc_one,EAST)
 				if(SOUTH)
-					firstloc = get_turf(my_atom)
-					secondloc = get_step(firstloc,EAST)
+					loc_one = get_turf(my_atom)
+					loc_two = get_step(loc_one,EAST)
 				if(EAST)
-					firstloc = get_step(my_atom, EAST)
-					secondloc = get_step(firstloc,NORTH)
+					loc_one = get_step(my_atom, EAST)
+					loc_two = get_step(loc_one,NORTH)
 				if(WEST)
-					firstloc = get_turf(my_atom)
-					secondloc = get_step(firstloc,NORTH)
+					loc_one = get_turf(my_atom)
+					loc_two = get_step(loc_one,NORTH)
 		olddir = dir
 		var/proj_type = text2path(projectile_type)
-		var/obj/item/projectile/projone = new proj_type(firstloc)
-		var/obj/item/projectile/projtwo = new proj_type(secondloc)
-		projone.starting = get_turf(my_atom)
-		projone.firer = usr
-		projone.def_zone = "chest"
-		projtwo.starting = get_turf(my_atom)
-		projtwo.firer = usr
-		projtwo.def_zone = "chest"
+		var/obj/item/projectile/projectile_one = new proj_type(loc_one)
+		var/obj/item/projectile/projectile_two = new proj_type(loc_two)
+		projectile_one.starting = get_turf(my_atom)
+		projectile_one.firer = usr
+		projectile_one.def_zone = "chest"
+		projectile_two.starting = get_turf(my_atom)
+		projectile_two.firer = usr
+		projectile_two.def_zone = "chest"
 		spawn()
 			playsound(src, fire_sound, 50, 1)
-			projone.dumbfire(my_atom.dir)
-			projtwo.dumbfire(my_atom.dir)
+			projectile_one.launch(my_atom.dir)
+			projectile_two.launch(my_atom.dir)
 		sleep(2)
+	my_atom.next_firetime = world.time + fire_delay
 	my_atom.next_firetime = world.time + fire_delay
 
 /datum/spacepod/equipment

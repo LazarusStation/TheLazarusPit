@@ -12,16 +12,7 @@
 	var/resource_coeff = 1
 	var/time_coeff_tech = 1
 	var/resource_coeff_tech = 1
-	var/list/resources = list(
-								MAT_METAL=0,
-								MAT_GLASS=0,
-								MAT_BANANIUM=0,
-								MAT_DIAMOND=0,
-								MAT_GOLD=0,
-								MAT_PLASMA=0,
-								MAT_SILVER=0,
-								MAT_URANIUM=0
-								)
+	var/list/resources = list(/obj/item/stack/material/steel=0,/obj/item/stack/material/glass=0,/obj/item/stack/material/diamond=0,/obj/item/stack/material/gold=0,/obj/item/stack/material/phoron=0,/obj/item/stack/material/silver=0,/obj/item/stack/material/uranium=0)
 	var/res_max_amount = 200000
 	var/datum/research/files
 	var/id
@@ -157,8 +148,6 @@
 	desc = initial(desc)
 
 	var/obj/item/I = new D.build_path
-	I.materials[/obj/item/stack/material/steel] = get_resource_cost_w_coeff(D,/obj/item/stack/material/steel)
-	I.materials[/obj/item/stack/material/glass] = get_resource_cost_w_coeff(D,/obj/item/stack/material/glass)
 	visible_message("[icon(src)] <b>\The [src]</b> beeps, \"\The [I] is complete.\"")
 	being_built = null
 
@@ -467,7 +456,7 @@
 
 	var/total_amount = round(resources[mat_string]/SHEET_MATERIAL_AMOUNT)
 	if(total_amount)//if there's still enough material for sheets
-		var/obj/item/stack/sheet/res = new type(get_turf(src),min(amount,total_amount))
+		var/obj/item/stack/material/res = new type(get_turf(src),min(amount,total_amount))
 		resources[mat_string] -= res.amount*SHEET_MATERIAL_AMOUNT
 		result += res.amount
 
@@ -494,19 +483,19 @@
 		var/material
 		switch(W.type)
 			if(/obj/item/stack/material/steel)
-				type = /obj/item/stack/material/steel
+				material = /obj/item/stack/material/steel
 			if(/obj/item/stack/material/glass)
-				type = /obj/item/stack/material/glass
+				material = /obj/item/stack/material/glass
 			if(/obj/item/stack/material/gold)
-				type = /obj/item/stack/material/gold
+				material = /obj/item/stack/material/gold
 			if(/obj/item/stack/material/silver)
-				type = /obj/item/stack/material/silver
+				material = /obj/item/stack/material/silver
 			if(/obj/item/stack/material/diamond)
-				type = /obj/item/stack/material/diamond
+				material = /obj/item/stack/material/diamond
 			if(/obj/item/stack/material/phoron)
-				type = /obj/item/stack/material/phoron
+				material = /obj/item/stack/material/phoron
 			if(/obj/item/stack/material/uranium)
-				type = /obj/item/stack/material/uranium
+				material = /obj/item/stack/material/uranium
 			else
 				return ..()
 
@@ -516,7 +505,7 @@
 		if(res_max_amount - resources[material] < SHEET_MATERIAL_AMOUNT) //overstuffing the fabricator
 			to_chat(user, "\The [src] [material2name(material)] storage is full.")
 			return
-		var/obj/item/stack/sheet/stack = W
+		var/obj/item/stack/material/stack = W
 		var/sname = "[stack.name]"
 		if(resources[material] < res_max_amount)
 			overlays += "fab-load-[material2name(material)]"//loading animation is now an overlay based on material type. No more spontaneous conversion of all ores to metal. -vey

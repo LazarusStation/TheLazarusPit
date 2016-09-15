@@ -1988,6 +1988,7 @@
 #include "code\modules\shuttles\shuttle_specops.dm"
 #include "code\modules\shuttles\shuttle_supply.dm"
 #include "code\modules\shuttles\shuttles_multi.dm"
+#include "code\modules\spacepods\_helper.dm"
 #include "code\modules\spacepods\circutboard.dm"
 #include "code\modules\spacepods\construction.dm"
 #include "code\modules\spacepods\equipment.dm"
