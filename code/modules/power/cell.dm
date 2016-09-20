@@ -177,7 +177,7 @@ var/cell_uid = 1		// Unique ID of this power cell. Used to reduce bunch of uglie
 			overlays += image('icons/obj/power.dmi', overlay_state)
 
 /obj/item/weapon/cell/proc/percent()		// return % charge of cell
-	return 100.0*charge/maxcharge
+	return (100.0 * charge/maxcharge)
 
 /obj/item/weapon/cell/proc/fully_charged()
 	return (charge == maxcharge)
