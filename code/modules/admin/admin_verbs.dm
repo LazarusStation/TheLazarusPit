@@ -806,7 +806,6 @@ var/list/admin_verbs_mentor = list(
 		log_and_message_admins("changed the security level from code [get_security_level()] to code [sec_level].")
 		set_security_level(sec_level)
 
-
 //---- bs12 verbs ----
 
 /client/proc/mod_panel()
